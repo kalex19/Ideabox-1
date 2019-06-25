@@ -1,0 +1,15 @@
+.title {
+  font-size: 2em;
+  color: white;
+}
+
+.description {
+  font-family: cursive;
+  font-size: 1em;
+  color: #706e6b;
+}
+
+.deleteBtn {
+  border-radius: 50%;
+  padding: 15px;
+}

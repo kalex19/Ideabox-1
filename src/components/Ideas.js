@@ -1,10 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from './Card';
+import '../styles/Ideas.css';
 
-export class Ideas extends Component {
-	render() {
-		return <div />;
-	}
-}
+const Ideas = ({ ideas, deleteIdea }) => {
+	const ideaCards = ideas.map(idea => {
+		return (
+			<div className="cardContainer">
+				<Card
+					id={idea.id}
+					title={idea.title}
+					description={idea.description}
+					completed={idea.completed}
+					key={idea.id}
+					deleteIdea={deleteIdea}
+				/>{' '}
+			</div>
+		);
+	});
+
+	return <div> {ideaCards} </div>;
+};
 
 export default Ideas;

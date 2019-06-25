@@ -1,0 +1,21 @@
+.inputForm {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.titleInput,
+.desInput {
+  margin: 5px;
+  height: 30px;
+  background-color: rgb(226, 235, 175);
+  border: 1px black solid;
+  padding: 10px;
+  width: 30%;
+}
+
+.btnSubmit {
+  height: 57px;
+  width: 30%;
+  background-color: #71852c;
+  font-size: 1em;
+}

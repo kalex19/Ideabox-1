@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/Form.css';
 
 class Form extends Component {
 	constructor() {
@@ -15,19 +16,47 @@ class Form extends Component {
 		});
 	};
 
+	submitNewIdea = e => {
+		e.preventDefault();
+		const newIdea = {
+			...this.state,
+			id: Date.now()
+		};
+		this.props.addIdea(newIdea);
+		this.clearInputs();
+	};
+
+	clearInputs = () => {
+		this.setState({
+			title: '',
+			description: ''
+		});
+	};
+
 	render() {
 		return (
 			<div>
-				<form onSubmit={this.submitForm}>
-					<input type="text" placeholder="title" value={this.state.title} name="title" onChange={this.handleChange} />
+				<form className="inputForm">
 					<input
+						className="titleInput"
+						type="text"
+						placeholder="title"
+						value={this.state.title}
+						name="title"
+						onChange={this.handleChange}
+					/>{' '}
+					<input
+						className="desInput"
 						type="text"
 						placeholder="description"
 						value={this.state.description}
 						name="description"
 						onChange={this.handleChange}
 					/>
-				</form>
+					<button className="btnSubmit" onClick={e => this.submitNewIdea(e)}>
+						Submit
+					</button>
+				</form>{' '}
 			</div>
 		);
 	}
